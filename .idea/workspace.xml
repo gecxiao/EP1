@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e13327db-2fa1-4406-aefe-75092664fa35" name="Default Changelist" comment="" />
+    <list default="true" id="e13327db-2fa1-4406-aefe-75092664fa35" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/message/message.go" beforeDir="false" afterPath="$PROJECT_DIR$/message/message.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/process/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/process/server.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +49,14 @@
       <screen x="0" y="23" width="1440" height="811" />
     </state>
     <state x="519" y="94" key="#GOPATH/0.23.1440.811@0.23.1440.811" timestamp="1599643550355" />
+    <state x="195" y="79" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599718448198">
+      <screen x="0" y="23" width="1440" height="806" />
+    </state>
+    <state x="195" y="79" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.806@0.23.1440.806" timestamp="1599718448198" />
+    <state x="136" y="135" width="1200" height="571" key="DiffContextDialog" timestamp="1599745692712">
+      <screen x="0" y="23" width="1440" height="806" />
+    </state>
+    <state x="136" y="135" width="1200" height="571" key="DiffContextDialog/0.23.1440.806@0.23.1440.806" timestamp="1599745692712" />
     <state x="544" y="158" width="670" height="676" key="search.everywhere.popup" timestamp="1599663825943">
       <screen x="0" y="23" width="1440" height="811" />
     </state>
