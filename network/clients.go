@@ -18,7 +18,7 @@ func UnicastSend(destination application.Process, m application.Message) {
 		log.Fatal(err)
 	}
 	now := time.Now()
-	fmt.Printf("Sent %s to %s, system time is %s\n", m.M, destination.Id, now)
+	fmt.Printf("Sent '%s' to %s, system time is %s\n", m.M, destination.Id, now)
 	r := rand.Float64() * 3 + 1
 	time.Sleep(time.Duration(r) * time.Second)
 	encoder := gob.NewEncoder(c)

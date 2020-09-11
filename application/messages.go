@@ -35,5 +35,5 @@ func GetInfo(client Process) Message {
 
 func UnicastReceive(source Process, message Message) {
 	//delivers the application received from the source network.
-	fmt.Printf("Received %s to %s, system time is %s\n", message.M, source.Id, message.T)
+	fmt.Printf("Received '%s' from %s, system time is %s\n", message.M, source.Id, message.T)
 }

@@ -20,14 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e13327db-2fa1-4406-aefe-75092664fa35" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/network/clients.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/network/servers.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/message/message.go" beforeDir="false" afterPath="$PROJECT_DIR$/application/messages.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/client.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/server.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/messages.go" beforeDir="false" afterPath="$PROJECT_DIR$/application/messages.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/network/clients.go" beforeDir="false" afterPath="$PROJECT_DIR$/network/clients.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +71,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="519" y="94" key="#GOPATH" timestamp="1599643550355">
