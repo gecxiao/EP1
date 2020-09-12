@@ -37,19 +37,72 @@ send 1 hi
 A notification should look like this:
 
 ```
-Sent 'hi' to 1, system time is 2020-09-11 16:16:28.680624 +0800 CST m=+3.844874629
+Sent 'hi' to 1, system time is Sep 11 16:16:28.681
 ```
 
 After a little bit delay, on your first terminal, you should receive a notification as well, indicates the message has been received:
 
 ```
-Received 'hi' from 2, system time is 2020-09-11 16:16:30.687264 +0800 CST m=+201.213284811
+Received 'hi' from 2, system time is Sep 11 16:16:30.687
 ```
 
 ### Multiple to One
 
-need to be implemented
+It is similar to the one-to-one, except we need three terminals. One represents a server, two represent the clients.
 
+In the first terminal, run following command:
+
+```
+go run main.go 3
+```
+
+In the second terminal, run:
+
+```
+go run main.go 2
+```
+
+send a message:
+
+```
+send 3 thisIs2
+```
+
+You should see something like this:
+
+```
+Sent 'thisIs2' to 3, system time is Sep 12 14:17:33.526
+```
+
+And the server will print:
+
+```
+Received 'thisIs2' from 2, system time is Sep 12 14:17:35.340
+```
+
+In the third terminal, run:
+```
+go run main.go 4
+```
+
+send a message:
+
+```
+send 3 thisIs4
+```
+
+You should see something like this:
+```
+Sent 'thisIs4' to 3, system time is Sep 12 14:19:16.937
+```
+
+In the server terminal you should see:
+
+```
+Received 'thisIs4' from 4, system time is Sep 12 14:19:19.763
+```
+
+Then the server will shut down.
 ## Structure and Design
 
 ### application
@@ -77,9 +130,9 @@ It mainly simulates the application layer. The `GetInfo` function takes a proces
 
 ### network
 
-The `/network/clients.go` contains `UnicastSend` function, which takes the destination `Process` and `Message` as input, try to send the message to the destination via TCP connection. It is encoded with the support of `gob`. It also prints out the sent time and information for the client user. In this function, we also decide to simulate the network delay by put it to sleep for a random number from 1-3 secs.
+The `/network/clients.go` contains `UnicastSend` function, which takes the destination `Process` and `Message` as input, try to send the message to the destination via TCP connection. It is encoded with the support of `gob`. It also prints out the sent time and information for the client user.
 
-The`/network/servers.go` contains `Server` function, which function as a go routine in the main function. It initialize a TCP server, and writes the message it receives to a go channel. The main function can then read the message from the channel and pass it to the `UnicastReceive` function.
+The`/network/servers.go` contains `Server` function, which function as a go routine in the main function. It initialize a TCP server, and writes the message it receives to a go channel. The main function can then read the message from the channel and pass it to the `UnicastReceive` function. We also simulate the network delay in this function.
 
 ## Deployment
 * [Channels and Go Routines](https://www.justindfuller.com/2020/01/go-things-i-love-channels-and-goroutines/)

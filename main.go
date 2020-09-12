@@ -1,8 +1,10 @@
 package main
+
 /*
 In this simulation
 network 1 always wait a connection from network 2
 network 3 always wait two connections: from network 2 and 4
+The configuration file set max delay to be 3000(ms), min delay to be 1000(ms).
 */
 import (
 	"./application"
@@ -10,23 +12,24 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"strconv"
 	"strings"
 )
 
-func main(){
+func main() {
 	//open config file to load the processes
 	data, err := ioutil.ReadFile("config.txt")
 	if err != nil {
 		fmt.Println("File reading error", err)
 		return
 	}
-	words := strings.Fields(string(data)) //[min_delay(ms) max_delay(ms) 1 IP1 8080 2 IP2 8081 ...]
+	words := strings.Fields(string(data)) //[min_delay(ms) max_delay(ms) ID1 IP1 PORT1 ID2 IP2 PORT2 ...]
 	var pA application.Process
 	var pB application.Process
 	var pC application.Process
 	var pD application.Process
-	//minDelay := words[0]
-	//maxDelay := words[1]
+	minDelay, _ := strconv.Atoi(words[0])
+	maxDelay, _ := strconv.Atoi(words[1])
 	pA.Id, pA.Ip, pA.Port = words[2], words[3], words[4]
 	pB.Id, pB.Ip, pB.Port = words[5], words[6], words[7]
 	pC.Id, pC.Ip, pC.Port = words[8], words[9], words[10]
@@ -40,33 +43,39 @@ func main(){
 	pNum := arguments[1]
 
 	switch {
+	//Process 1 should receive a message from process 2.
 	case pNum == "1":
 		messages := make(chan application.Message)
-		go network.Server(pA, 1, messages)
-		mes := <- messages
+		go network.Server(pA, 1, maxDelay, minDelay, messages)
+		mes := <-messages
 		application.UnicastReceive(mes.S, mes)
 		return
+	//Process 2 should send a message to either process 1 or process 3.
 	case pNum == "2":
 		mes := application.GetInfo(pB)
-		if mes.R == "1"{
+		if mes.R == "1" {
 			network.UnicastSend(pA, mes)
 			return
-		} else if mes.R == "3"{
+		} else if mes.R == "3" {
 			network.UnicastSend(pC, mes)
 			return
 		} else {
 			fmt.Println("Please send to process 1 or 3")
 			return
 		}
-	case pNum == "3": //This case has some problem, it gives connection
-		messages := make(chan application.Message)
-		go network.Server(pA, 2, messages)
-		mes := <- messages
+	//Process 3 will wait for two messages and then stop listening.
+	case pNum == "3":
+		messages := make(chan application.Message, 2)
+		go network.Server(pC, 2, maxDelay, minDelay, messages)
+		mes := <-messages
+		application.UnicastReceive(mes.S, mes)
+		mes = <-messages
 		application.UnicastReceive(mes.S, mes)
 		return
+	//Process 4 should send a message to process 3.
 	case pNum == "4":
 		mes := application.GetInfo(pD)
-		if mes.R == "3"{
+		if mes.R == "3" {
 			network.UnicastSend(pC, mes)
 			return
 		} else {

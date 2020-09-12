@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 	"strings"
-	"time"
 )
+
 type Process struct {
 	Id   string
 	Ip   string
@@ -17,11 +17,11 @@ type Message struct {
 	S Process
 	R string
 	M string
-	T time.Time
+	T string
 }
 
 func GetInfo(client Process) Message {
-	//get the application from user and pack in into Message struct
+	//get the message from user and pack in into Message struct
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Print("please send application in this pattern: send 'processNumber' 'YourMessage'\n")
 	text, _ := reader.ReadString('\n')
@@ -34,6 +34,6 @@ func GetInfo(client Process) Message {
 }
 
 func UnicastReceive(source Process, message Message) {
-	//delivers the application received from the source network.
+	//delivers the message received from the source network.
 	fmt.Printf("Received '%s' from %s, system time is %s\n", message.M, source.Id, message.T)
 }

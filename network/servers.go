@@ -4,15 +4,18 @@ import (
 	"../application"
 	"encoding/gob"
 	"fmt"
+	"math/rand"
 	"net"
 	"time"
 )
 
-func Server(server application.Process, n int, messages chan application.Message) {
+func Server(server application.Process, n int, maxDelay int, minDelay int,
+	messages chan application.Message) {
 	//input: the network# and the # of connections it will receive
 	//listen to the client and decode the application, then send via channel
+	//simulate the delay here.
 	var counter = 0
-	ln, err := net.Listen("tcp", server.Ip + ":" + server.Port) //creates server
+	ln, err := net.Listen("tcp", server.Ip+":"+server.Port) //creates server
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -22,20 +25,20 @@ func Server(server application.Process, n int, messages chan application.Message
 		if err != nil {
 			fmt.Println(err)
 		}
-		if counter == n{
+		if counter == n {
 			err = c.Close()
 			if err != nil {
 				fmt.Println(err)
 			}
 			return
 		}
-		decoder := gob.NewDecoder(c) //initialize gob decoder
+		decoder := gob.NewDecoder(c)
 
-		//Decode application struct and print it
 		mes := new(application.Message)
 		_ = decoder.Decode(mes)
-
-		t := time.Now()
+		r := rand.Float64() * float64((maxDelay-minDelay)+minDelay)
+		time.Sleep(time.Duration(r) * time.Millisecond)
+		t := time.Now().Format("Jan _2 15:04:05.000")
 		mes.T = t
 		messages <- *mes
 		counter++

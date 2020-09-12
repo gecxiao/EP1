@@ -21,8 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="e13327db-2fa1-4406-aefe-75092664fa35" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/messages.go" beforeDir="false" afterPath="$PROJECT_DIR$/application/messages.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/network/clients.go" beforeDir="false" afterPath="$PROJECT_DIR$/network/clients.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/network/servers.go" beforeDir="false" afterPath="$PROJECT_DIR$/network/servers.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +62,21 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
+  <component name="RunManager">
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="MP1" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build main.go" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
@@ -86,6 +105,22 @@
       <screen x="0" y="23" width="1440" height="806" />
     </state>
     <state x="136" y="135" width="1200" height="571" key="DiffContextDialog/0.23.1440.806@0.23.1440.806" timestamp="1599745692712" />
+    <state width="1358" height="196" key="GridCell.Tab.0.bottom" timestamp="1599890040846">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1358" height="196" key="GridCell.Tab.0.bottom/0.23.1440.811@0.23.1440.811" timestamp="1599890040846" />
+    <state width="1358" height="196" key="GridCell.Tab.0.center" timestamp="1599890040845">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1358" height="196" key="GridCell.Tab.0.center/0.23.1440.811@0.23.1440.811" timestamp="1599890040845" />
+    <state width="1358" height="196" key="GridCell.Tab.0.left" timestamp="1599890040844">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1358" height="196" key="GridCell.Tab.0.left/0.23.1440.811@0.23.1440.811" timestamp="1599890040844" />
+    <state width="1358" height="196" key="GridCell.Tab.0.right" timestamp="1599890040846">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1358" height="196" key="GridCell.Tab.0.right/0.23.1440.811@0.23.1440.811" timestamp="1599890040846" />
     <state x="544" y="158" width="670" height="676" key="search.everywhere.popup" timestamp="1599663825943">
       <screen x="0" y="23" width="1440" height="811" />
     </state>
