@@ -134,7 +134,7 @@ The `/network/clients.go` contains `UnicastSend` function, which takes the desti
 
 The`/network/servers.go` contains `Server` function, which function as a go routine in the main function. It initialize a TCP server, and writes the message it receives to a go channel. The main function can then read the message from the channel and pass it to the `UnicastReceive` function. We also simulate the network delay in this function.
 
-## Deployment
+## Sources
 * [Channels and Go Routines](https://www.justindfuller.com/2020/01/go-things-i-love-channels-and-goroutines/)
 * [Create a TCP and UDP Client and Server using Go](https://www.linode.com/docs/development/go/developing-udp-and-tcp-clients-and-servers-in-go/)
 * [Go Routines](https://golangbot.com/goroutines/)
