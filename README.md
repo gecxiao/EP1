@@ -120,7 +120,7 @@ type Message struct {
 	S Process
 	R string
 	M string
-	T time.Time
+	T string
 }
 ```
 
